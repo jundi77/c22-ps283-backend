@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/jundi77/c22-ps283-backend/issues"
   },
-  "homepage": "https://github.com/jundi77/c22-ps283-backend#readme"
+  "homepage": "https://github.com/jundi77/c22-ps283-backend#readme",
+  "dependencies": {
+    "@hapi/hapi": "^20.2.2"
+  }
 }
