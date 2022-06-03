@@ -1,0 +1,15 @@
+steps:
+- name: node:16
+  entrypoint: npm
+  args: ["install"]
+- name: node:16
+  entrypoint: npm
+  args: ["run", "create-env"]
+  env:
+    - 'NODE_ENV=${_NODE_ENV}'
+    - 'API_KEY=${_API_KEY}'
+    - 'ML_API_KEY=${_ML_API_KEY}'
+    - 'ML_PROCESSING_URI=${_ML_PROCESSING_URI}'
+- name: "gcr.io/cloud-builders/gcloud"
+  args: ["app", "deploy"]
+timeout: "1600s"
