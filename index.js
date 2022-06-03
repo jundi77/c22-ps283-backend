@@ -6,7 +6,7 @@ const { BearerDefault, BearerMlDefault } = require('./src/auth')
 
 const init = async () => {
   const server = Hapi.server({
-    port: process.env.NODE_ENV === 'production'? process.env.PORT : 3000,
+    port: process.env._NODE_ENV === 'production'? process.env.PORT : 3000,
     host: '0.0.0.0',
   })
 
