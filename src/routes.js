@@ -11,7 +11,7 @@ module.exports = [
     method: 'GET',
     path: '/ml',
     handler: controller.mlHealth,
-    config: {
+    options: {
       auth: 'ml-default'
     },
   },
@@ -20,8 +20,13 @@ module.exports = [
     method: 'POST',
     path: '/ml/predict',
     handler: controller.mlPredict,
-    config: {
-      auth: 'ml-default'
+    options: {
+      auth: 'ml-default',
+      payload: {
+        output: 'data',
+        maxBytes: 209715200,
+        parse: false,
+      },
     },
   }
 ]
