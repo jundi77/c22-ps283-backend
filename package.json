@@ -32,6 +32,9 @@
     "axios": "^0.27.2",
     "bcrypt": "^5.0.1",
     "dotenv": "^16.0.1",
-    "hapi-auth-bearer-token": "^8.0.0"
+    "hapi-auth-bearer-token": "^8.0.0",
+    "hapi-pino": "^10.0.0",
+    "nodemon": "^2.0.16",
+    "pino-pretty": "^8.0.0"
   }
 }
