@@ -4,5 +4,6 @@
  * @param {import('@hapi/hapi').ResponseToolkit} h 
  */
 module.exports = (req, h) => {
-  return 'Hello world';
+  return JSON.stringify(process.env)
+  // return 'Hello world';
 }
