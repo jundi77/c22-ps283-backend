@@ -28,5 +28,11 @@ module.exports = [
         parse: false,
       },
     },
-  }
+  },
+
+  {
+    method: 'GET',
+    path: '/md/dummy',
+    handler: controller.mdDummy,
+  },
 ]
