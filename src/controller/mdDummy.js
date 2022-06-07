@@ -80,52 +80,52 @@ module.exports = async (req, h) => {
                 "trains": [
                   {
                     "answer": "0",
-                    "name": "belajar angka 0",
+                    "name": "latihan angka 0",
                     "question": "0"
                   },
                   {
                     "answer": "1",
-                    "name": "belajar angka 1",
+                    "name": "latihan angka 1",
                     "question": "1"
                   },
                   {
                     "answer": "2",
-                    "name": "belajar angka 2",
+                    "name": "latihan angka 2",
                     "question": "2"
                   },
                   {
                     "answer": "3",
-                    "name": "belajar angka 3",
+                    "name": "latihan angka 3",
                     "question": "3"
                   },
                   {
                     "answer": "4",
-                    "name": "belajar angka 4",
+                    "name": "latihan angka 4",
                     "question": "4"
                   },
                   {
                     "answer": "5",
-                    "name": "belajar angka 5",
+                    "name": "latihan angka 5",
                     "question": "5"
                   },
                   {
                     "answer": "6",
-                    "name": "belajar angka 6",
+                    "name": "latihan angka 6",
                     "question": "6"
                   },
                   {
                     "answer": "7",
-                    "name": "belajar angka 7",
+                    "name": "latihan angka 7",
                     "question": "7"
                   },
                   {
                     "answer": "8",
-                    "name": "belajar angka 8",
+                    "name": "latihan angka 8",
                     "question": "8"
                   },
                   {
                     "answer": "9",
-                    "name": "belajar angka 9",
+                    "name": "latihan angka 9",
                     "question": "9"
                   }
                 ]
@@ -140,47 +140,47 @@ module.exports = async (req, h) => {
                 "trains": [
                   {
                     "answer": "10",
-                    "name": "belajar angka 10",
+                    "name": "latihan angka 10",
                     "question": "10"
                   },
                   {
                     "answer": "20",
-                    "name": "belajar angka 20",
+                    "name": "latihan angka 20",
                     "question": "20"
                   },
                   {
                     "answer": "30",
-                    "name": "belajar angka 30",
+                    "name": "latihan angka 30",
                     "question": "30"
                   },
                   {
                     "answer": "40",
-                    "name": "belajar angka 40",
+                    "name": "latihan angka 40",
                     "question": "40"
                   },
                   {
                     "answer": "50",
-                    "name": "belajar angka 50",
+                    "name": "latihan angka 50",
                     "question": "50"
                   },
                   {
                     "answer": "60",
-                    "name": "belajar angka 60",
+                    "name": "latihan angka 60",
                     "question": "60"
                   },
                   {
                     "answer": "70",
-                    "name": "belajar angka 70",
+                    "name": "latihan angka 70",
                     "question": "70"
                   },
                   {
                     "answer": "80",
-                    "name": "belajar angka 80",
+                    "name": "latihan angka 80",
                     "question": "80"
                   },
                   {
                     "answer": "90",
-                    "name": "belajar angka 90",
+                    "name": "latihan angka 90",
                     "question": "90"
                   }
                 ]
@@ -197,21 +197,41 @@ module.exports = async (req, h) => {
             "learns": [
               {
                 "answer": "2",
-                "gifLink": "https://i.makeagif.com/media/8-16-2020/mDO6C4.gif",
+                "gifLink": "https://i.makeagif.com/media/8-17-2020/qtesC6.gif",
                 "name": "belajar 1+1"
               },
               {
                 "answer": "3",
-                "gifLink": "https://i.makeagif.com/media/8-16-2020/mDO6C4.gif",
+                "gifLink": "https://i.makeagif.com/media/8-17-2020/KKEUBV.gif",
                 "name": "belajar 1+2"
               },
               {
                 "answer": "4",
-                "gifLink": "https://i.makeagif.com/media/8-16-2020/mDO6C4.gif",
+                "gifLink": "https://i.makeagif.com/media/8-17-2020/qvAioX.gif",
                 "name": "belajar 2+2"
               }
             ],
-            "name": "Belajar Hitung Dasar"
+            "name": "Belajar Penjumlahan Dasar"
+          },
+          {
+            "learns": [
+              {
+                "answer": "2",
+                "gifLink": "https://i.makeagif.com/media/8-17-2020/qtesC6.gif",
+                "name": "belajar 4-2"
+              },
+              {
+                "answer": "3",
+                "gifLink": "https://i.makeagif.com/media/8-17-2020/KKEUBV.gif",
+                "name": "belajar 5-2"
+              },
+              {
+                "answer": "4",
+                "gifLink": "https://i.makeagif.com/media/8-17-2020/qvAioX.gif",
+                "name": "belajar 10-6"
+              }
+            ],
+            "name": "Belajar Pengurangan Dasar"
           }
         ],
         "name": "Belajar Hitung"
@@ -221,140 +241,90 @@ module.exports = async (req, h) => {
         "name": "Latihan Hitung",
         "trainCourse": [
           {
-            "name": "Latihan Hitung Dasar",
+            "name": "Latihan Penjumlahan Dasar",
             "trainQuestion": [
               {
                 "name": "Latihan 1",
                 "trains": [
                   {
-                    "answer": "A",
-                    "name": "belajar huruf A",
-                    "question": "A"
+                    "answer": "2",
+                    "name": "latihan 1+1",
+                    "question": "1+1"
                   },
                   {
-                    "answer": "B",
-                    "name": "belajar huruf B",
-                    "question": "B"
+                    "answer": "3",
+                    "name": "latihan 2+1",
+                    "question": "2+1"
                   },
                   {
-                    "answer": "C",
-                    "name": "belajar huruf C",
-                    "question": "C"
+                    "answer": "4",
+                    "name": "latihan 2+2",
+                    "question": "2+2"
                   },
                   {
-                    "answer": "D",
-                    "name": "belajar huruf D",
-                    "question": "D"
+                    "answer": "6",
+                    "name": "latihan 3+3",
+                    "question": "3+3"
                   },
                   {
-                    "answer": "E",
-                    "name": "belajar huruf E",
-                    "question": "E"
+                    "answer": "8",
+                    "name": "latihan 3+5",
+                    "question": "3+5"
                   },
                   {
-                    "answer": "F",
-                    "name": "belajar huruf F",
-                    "question": "F"
+                    "answer": "9",
+                    "name": "latihan 8+1",
+                    "question": "8+1"
                   },
                   {
-                    "answer": "G",
-                    "name": "belajar huruf G",
-                    "question": "G"
+                    "answer": "10",
+                    "name": "latihan 6+4",
+                    "question": "6+4"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Latihan Pengurangan Dasar",
+            "trainQuestion": [
+              {
+                "name": "Latihan 1",
+                "trains": [
+                  {
+                    "answer": "2",
+                    "name": "latihan 5-3",
+                    "question": "5-3"
                   },
                   {
-                    "answer": "H",
-                    "name": "belajar huruf H",
-                    "question": "H"
+                    "answer": "3",
+                    "name": "latihan 6-3",
+                    "question": "6-3"
                   },
                   {
-                    "answer": "I",
-                    "name": "belajar huruf I",
-                    "question": "I"
+                    "answer": "4",
+                    "name": "latihan 10-6",
+                    "question": "10-6"
                   },
                   {
-                    "answer": "J",
-                    "name": "belajar huruf J",
-                    "question": "J"
+                    "answer": "6",
+                    "name": "latihan 8-2",
+                    "question": "8-2"
                   },
                   {
-                    "answer": "K",
-                    "name": "belajar huruf K",
-                    "question": "K"
+                    "answer": "8",
+                    "name": "latihan 9-1",
+                    "question": "9-1"
                   },
                   {
-                    "answer": "L",
-                    "name": "belajar huruf L",
-                    "question": "L"
+                    "answer": "9",
+                    "name": "latihan 10-1",
+                    "question": "10-1"
                   },
                   {
-                    "answer": "M",
-                    "name": "belajar huruf M",
-                    "question": "M"
-                  },
-                  {
-                    "answer": "N",
-                    "name": "belajar huruf N",
-                    "question": "N"
-                  },
-                  {
-                    "answer": "O",
-                    "name": "belajar huruf O",
-                    "question": "O"
-                  },
-                  {
-                    "answer": "P",
-                    "name": "belajar huruf P",
-                    "question": "P"
-                  },
-                  {
-                    "answer": "Q",
-                    "name": "belajar huruf Q",
-                    "question": "Q"
-                  },
-                  {
-                    "answer": "R",
-                    "name": "belajar huruf R",
-                    "question": "R"
-                  },
-                  {
-                    "answer": "S",
-                    "name": "belajar huruf S",
-                    "question": "S"
-                  },
-                  {
-                    "answer": "T",
-                    "name": "belajar huruf T",
-                    "question": "T"
-                  },
-                  {
-                    "answer": "U",
-                    "name": "belajar huruf U",
-                    "question": "U"
-                  },
-                  {
-                    "answer": "V",
-                    "name": "belajar huruf V",
-                    "question": "V"
-                  },
-                  {
-                    "answer": "W",
-                    "name": "belajar huruf W",
-                    "question": "W"
-                  },
-                  {
-                    "answer": "X",
-                    "name": "belajar huruf X",
-                    "question": "X"
-                  },
-                  {
-                    "answer": "Y",
-                    "name": "belajar huruf Y",
-                    "question": "Y"
-                  },
-                  {
-                    "answer": "Z",
-                    "name": "belajar huruf Z",
-                    "question": "Z"
+                    "answer": "10",
+                    "name": "latihan 10-0",
+                    "question": "10-0"
                   }
                 ]
               }
@@ -512,22 +482,137 @@ module.exports = async (req, h) => {
             "name": "Latihan Alphabet",
             "trainQuestion": [
               {
-                "name": "number one",
+                "name": "Latihan 1",
                 "trains": [
                   {
                     "answer": "A",
-                    "name": "belajar huruf A",
+                    "name": "latihan huruf A",
                     "question": "A"
                   },
                   {
                     "answer": "B",
-                    "name": "belajar huruf B",
+                    "name": "latihan huruf B",
                     "question": "B"
                   },
                   {
                     "answer": "C",
-                    "name": "belajar huruf C",
+                    "name": "latihan huruf C",
                     "question": "C"
+                  },
+                  {
+                    "answer": "D",
+                    "name": "latihan huruf D",
+                    "question": "D"
+                  },
+                  {
+                    "answer": "E",
+                    "name": "latihan huruf E",
+                    "question": "E"
+                  },
+                  {
+                    "answer": "F",
+                    "name": "latihan huruf F",
+                    "question": "F"
+                  },
+                  {
+                    "answer": "G",
+                    "name": "latihan huruf G",
+                    "question": "G"
+                  },
+                  {
+                    "answer": "H",
+                    "name": "latihan huruf H",
+                    "question": "H"
+                  },
+                  {
+                    "answer": "I",
+                    "name": "latihan huruf I",
+                    "question": "I"
+                  },
+                  {
+                    "answer": "J",
+                    "name": "latihan huruf J",
+                    "question": "J"
+                  },
+                  {
+                    "answer": "K",
+                    "name": "latihan huruf K",
+                    "question": "K"
+                  },
+                  {
+                    "answer": "L",
+                    "name": "latihan huruf L",
+                    "question": "L"
+                  },
+                  {
+                    "answer": "M",
+                    "name": "latihan huruf M",
+                    "question": "M"
+                  },
+                  {
+                    "answer": "N",
+                    "name": "latihan huruf N",
+                    "question": "N"
+                  },
+                  {
+                    "answer": "O",
+                    "name": "latihan huruf O",
+                    "question": "O"
+                  },
+                  {
+                    "answer": "P",
+                    "name": "latihan huruf P",
+                    "question": "P"
+                  },
+                  {
+                    "answer": "Q",
+                    "name": "latihan huruf Q",
+                    "question": "Q"
+                  },
+                  {
+                    "answer": "R",
+                    "name": "latihan huruf R",
+                    "question": "R"
+                  },
+                  {
+                    "answer": "S",
+                    "name": "latihan huruf S",
+                    "question": "S"
+                  },
+                  {
+                    "answer": "T",
+                    "name": "latihan huruf T",
+                    "question": "T"
+                  },
+                  {
+                    "answer": "U",
+                    "name": "latihan huruf U",
+                    "question": "U"
+                  },
+                  {
+                    "answer": "V",
+                    "name": "latihan huruf V",
+                    "question": "V"
+                  },
+                  {
+                    "answer": "W",
+                    "name": "latihan huruf W",
+                    "question": "W"
+                  },
+                  {
+                    "answer": "X",
+                    "name": "latihan huruf X",
+                    "question": "X"
+                  },
+                  {
+                    "answer": "Y",
+                    "name": "latihan huruf Y",
+                    "question": "Y"
+                  },
+                  {
+                    "answer": "Z",
+                    "name": "latihan huruf Z",
+                    "question": "Z"
                   }
                 ]
               }
@@ -537,51 +622,51 @@ module.exports = async (req, h) => {
             "name": "Latihan Nama Anggota Keluarga",
             "trainQuestion": [
               {
-                "name": "number one",
+                "name": "Latihan 1",
                 "trains": [
                   {
                     "answer": "KAKEK",
-                    "name": "belajar kata KAKEK",
+                    "name": "latihan menulis kata KAKEK",
                     "question": "KAKEK"
                   },
                   {
                     "answer": "NENEK",
-                    "name": "belajar kata NENEK",
+                    "name": "latihan menulis kata NENEK",
                     "question": "NENEK"
                   },
                   {
                     "answer": "PAMAN",
-                    "name": "belajar kata PAMAN",
+                    "name": "latihan menulis kata PAMAN",
                     "question": "PAMAN"
                   },
                   {
                     "answer": "BIBI",
-                    "name": "belajar kata BIBI",
+                    "name": "latihan menulis kata BIBI",
                     "question": "BIBI"
                   },
                   {
                     "answer": "IBU",
-                    "name": "belajar kata IBU",
+                    "name": "latihan menulis kata IBU",
                     "question": "IBU"
                   },
                   {
                     "answer": "AYAH",
-                    "name": "belajar kata AYAH",
+                    "name": "latihan menulis kata AYAH",
                     "question": "AYAH"
                   },
                   {
                     "answer": "ADIK",
-                    "name": "belajar kata ADIK",
+                    "name": "latihan menulis kata ADIK",
                     "question": "ADIK"
                   },
                   {
                     "answer": "OM",
-                    "name": "belajar kata OM",
+                    "name": "latihan menulis kata OM",
                     "question": "OM"
                   },
                   {
                     "answer": "TANTE",
-                    "name": "belajar kata TANTE",
+                    "name": "latihan menulis kata TANTE",
                     "question": "TANTE"
                   }
                 ]
