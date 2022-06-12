@@ -14,12 +14,23 @@ It uses `run-curl-tests.rb` which runs each command defined in
 `commands.yml`.
 
 ## About The Project
-
-...
+Calistung: Baca, Tulis, Hitung is an application that provide educational features to help children learn to write, read, and count.
 
 ## Team Members
 
-...
+## Team ID : C22-PS283
+<br>
+
+| Name                      | Student ID   | Path                |
+| ------------------------- | ------------ | ------------------- |
+| Wahyu Dwi Prasetio        | M2189F1802   | Machine Learning    |
+| Kurnia Oktaviani          | M7315G2758   | Machine Learning    |
+| Muhammad Ziyad Al Maududi | A2006F0587   | Android Development |
+| Ilham Maulana             | A2152G1662   | Android Development |
+| Jundullah Hanif Robbani   | C2004F0325   | Cloud Computing     |
+| Sani Hamdhani             | C7152G1671   | Cloud Computing     |
+
+<br>
 
 ## Resource
 
