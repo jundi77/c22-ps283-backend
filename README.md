@@ -3,22 +3,22 @@
 This is a bare-bones example of a Sinatra application providing a REST
 API to a DataMapper-backed model.
 
-The entire application is contained within the `app.rb` file.
+This is the frontend application for [Calistung](https://github.com/Chino-ai/Calistung) app. Currently connected to machine learning's service (https://github.com/wdprsto/Calistung_processing).
 
-`config.ru` is a minimal Rack configuration for unicorn.
+The entire application is written on node.js using Hapi.js framework.
 
-`run-tests.sh` runs a simplistic test and generates the API
-documentation below.
+`.env.example` is example environment file.
 
-It uses `run-curl-tests.rb` which runs each command defined in
-`commands.yml`.
+`app.yaml` is configuration file for Google App Engine deployment.
+
+`cloudbuild.yaml` is configuration file for Google Cloud Build.
 
 ## About The Project
 Calistung: Baca, Tulis, Hitung is an application that provide educational features to help children learn to write, read, and count.
 
 ## Team Members
 
-## Team ID : C22-PS283
+### Team ID : C22-PS283
 <br>
 
 | Name                      | Student ID   | Path                |
@@ -32,342 +32,115 @@ Calistung: Baca, Tulis, Hitung is an application that provide educational featur
 
 <br>
 
-## Resource
-
-...
-
 ## Install
 
     npm install
 
 ## Setup environment variables
 
-...
+Copy `.env.example` into `.env`, then set the value for the variables in `.env`.
 
 ## Run the app
 
-   npm run start
+```sh
+npm run start
+```
+
+or
+
+```sh
+npm start
+```
 
 # REST API
 
-The REST API to the example app is described below.
+The REST API to the Calistung frontend API is described below.
 
-## Get list of Things
+## Get hello world for health check
 
 ### Request
 
-`GET /thing/`
+`GET /`
 
-    curl -i -H 'Accept: application/json' http://localhost:7000/thing/
+    curl -i -H 'Accept: application/json' http://localhost:3000/
 
 ### Response
 
     HTTP/1.1 200 OK
-    Date: Thu, 24 Feb 2011 12:36:30 GMT
-    Status: 200 OK
-    Connection: close
-    Content-Type: application/json
-    Content-Length: 2
+    content-type: text/html; charset=utf-8
+    cache-control: no-cache
+    content-length: 11
+    accept-ranges: bytes
+    Date: Mon, 13 Jun 2022 03:15:35 GMT
+    Connection: keep-alive
+    Keep-Alive: timeout=5
 
-    []
+    Hello world
 
-## Create a new Thing
-
-### Request
-
-`POST /thing/`
-
-    curl -i -H 'Accept: application/json' -d 'name=Foo&status=new' http://localhost:7000/thing
-
-### Response
-
-    HTTP/1.1 201 Created
-    Date: Thu, 24 Feb 2011 12:36:30 GMT
-    Status: 201 Created
-    Connection: close
-    Content-Type: application/json
-    Location: /thing/1
-    Content-Length: 36
-
-    {"id":1,"name":"Foo","status":"new"}
-
-## Get a specific Thing
+## Get hello world ML service for health check
 
 ### Request
 
-`GET /thing/id`
+`GET /ml`
 
-    curl -i -H 'Accept: application/json' http://localhost:7000/thing/1
+    curl -i -H 'Accept: application/json' -H 'Authorization: Bearer testing-ml' http://localhost:3000/ml
 
 ### Response
 
     HTTP/1.1 200 OK
-    Date: Thu, 24 Feb 2011 12:36:30 GMT
-    Status: 200 OK
-    Connection: close
-    Content-Type: application/json
-    Content-Length: 36
+    content-type: text/html; charset=utf-8
+    cache-control: no-cache
+    content-length: 11
+    accept-ranges: bytes
+    Date: Mon, 13 Jun 2022 03:22:53 GMT
+    Connection: keep-alive
+    Keep-Alive: timeout=5
 
-    {"id":1,"name":"Foo","status":"new"}
+    Hello world
 
-## Get a non-existent Thing
-
-### Request
-
-`GET /thing/id`
-
-    curl -i -H 'Accept: application/json' http://localhost:7000/thing/9999
-
-### Response
-
-    HTTP/1.1 404 Not Found
-    Date: Thu, 24 Feb 2011 12:36:30 GMT
-    Status: 404 Not Found
-    Connection: close
-    Content-Type: application/json
-    Content-Length: 35
-
-    {"status":404,"reason":"Not found"}
-
-## Create another new Thing
+## Get ML service prediction
 
 ### Request
 
-`POST /thing/`
+`GET /ml`
 
-    curl -i -H 'Accept: application/json' -d 'name=Bar&junk=rubbish' http://localhost:7000/thing
-
-### Response
-
-    HTTP/1.1 201 Created
-    Date: Thu, 24 Feb 2011 12:36:31 GMT
-    Status: 201 Created
-    Connection: close
-    Content-Type: application/json
-    Location: /thing/2
-    Content-Length: 35
-
-    {"id":2,"name":"Bar","status":null}
-
-## Get list of Things again
-
-### Request
-
-`GET /thing/`
-
-    curl -i -H 'Accept: application/json' http://localhost:7000/thing/
+    curl --request POST \
+  --url https://calistung.uc.r.appspot.com/ml/predict \
+  --header 'Authorization: Bearer testing-ml' \
+  --header 'Content-Type: image/(image type)' \
+  --data (image data)
 
 ### Response
 
     HTTP/1.1 200 OK
-    Date: Thu, 24 Feb 2011 12:36:31 GMT
-    Status: 200 OK
-    Connection: close
-    Content-Type: application/json
-    Content-Length: 74
+    content-type: text/html; charset=utf-8
+    cache-control: no-cache
+    content-length: 11
+    accept-ranges: bytes
+    Date: Mon, 13 Jun 2022 03:22:54 GMT
+    Connection: keep-alive
+    Keep-Alive: timeout=5
 
-    [{"id":1,"name":"Foo","status":"new"},{"id":2,"name":"Bar","status":null}]
+    {"result_predict":"1D"}
 
-## Change a Thing's state
+## Get MD dummy data
 
 ### Request
 
-`PUT /thing/:id/status/changed`
+`GET /md/dummy`
 
-    curl -i -H 'Accept: application/json' -X PUT http://localhost:7000/thing/1/status/changed
+    curl -i -H 'Accept: application/json' http://localhost:3000/md/dummy
 
 ### Response
 
     HTTP/1.1 200 OK
-    Date: Thu, 24 Feb 2011 12:36:31 GMT
-    Status: 200 OK
-    Connection: close
-    Content-Type: application/json
-    Content-Length: 40
-
-    {"id":1,"name":"Foo","status":"changed"}
-
-## Get changed Thing
-
-### Request
-
-`GET /thing/id`
-
-    curl -i -H 'Accept: application/json' http://localhost:7000/thing/1
-
-### Response
-
-    HTTP/1.1 200 OK
-    Date: Thu, 24 Feb 2011 12:36:31 GMT
-    Status: 200 OK
-    Connection: close
-    Content-Type: application/json
-    Content-Length: 40
-
-    {"id":1,"name":"Foo","status":"changed"}
-
-## Change a Thing
-
-### Request
-
-`PUT /thing/:id`
-
-    curl -i -H 'Accept: application/json' -X PUT -d 'name=Foo&status=changed2' http://localhost:7000/thing/1
-
-### Response
-
-    HTTP/1.1 200 OK
-    Date: Thu, 24 Feb 2011 12:36:31 GMT
-    Status: 200 OK
-    Connection: close
-    Content-Type: application/json
-    Content-Length: 41
-
-    {"id":1,"name":"Foo","status":"changed2"}
-
-## Attempt to change a Thing using partial params
-
-### Request
-
-`PUT /thing/:id`
-
-    curl -i -H 'Accept: application/json' -X PUT -d 'status=changed3' http://localhost:7000/thing/1
-
-### Response
-
-    HTTP/1.1 200 OK
-    Date: Thu, 24 Feb 2011 12:36:32 GMT
-    Status: 200 OK
-    Connection: close
-    Content-Type: application/json
-    Content-Length: 41
-
-    {"id":1,"name":"Foo","status":"changed3"}
-
-## Attempt to change a Thing using invalid params
-
-### Request
-
-`PUT /thing/:id`
-
-    curl -i -H 'Accept: application/json' -X PUT -d 'id=99&status=changed4' http://localhost:7000/thing/1
-
-### Response
-
-    HTTP/1.1 200 OK
-    Date: Thu, 24 Feb 2011 12:36:32 GMT
-    Status: 200 OK
-    Connection: close
-    Content-Type: application/json
-    Content-Length: 41
-
-    {"id":1,"name":"Foo","status":"changed4"}
-
-## Change a Thing using the _method hack
-
-### Request
-
-`POST /thing/:id?_method=POST`
-
-    curl -i -H 'Accept: application/json' -X POST -d 'name=Baz&_method=PUT' http://localhost:7000/thing/1
-
-### Response
-
-    HTTP/1.1 200 OK
-    Date: Thu, 24 Feb 2011 12:36:32 GMT
-    Status: 200 OK
-    Connection: close
-    Content-Type: application/json
-    Content-Length: 41
-
-    {"id":1,"name":"Baz","status":"changed4"}
-
-## Change a Thing using the _method hack in the url
-
-### Request
-
-`POST /thing/:id?_method=POST`
-
-    curl -i -H 'Accept: application/json' -X POST -d 'name=Qux' http://localhost:7000/thing/1?_method=PUT
-
-### Response
-
-    HTTP/1.1 404 Not Found
-    Date: Thu, 24 Feb 2011 12:36:32 GMT
-    Status: 404 Not Found
-    Connection: close
-    Content-Type: text/html;charset=utf-8
-    Content-Length: 35
-
-    {"status":404,"reason":"Not found"}
-
-## Delete a Thing
-
-### Request
-
-`DELETE /thing/id`
-
-    curl -i -H 'Accept: application/json' -X DELETE http://localhost:7000/thing/1/
-
-### Response
-
-    HTTP/1.1 204 No Content
-    Date: Thu, 24 Feb 2011 12:36:32 GMT
-    Status: 204 No Content
-    Connection: close
-
-
-## Try to delete same Thing again
-
-### Request
-
-`DELETE /thing/id`
-
-    curl -i -H 'Accept: application/json' -X DELETE http://localhost:7000/thing/1/
-
-### Response
-
-    HTTP/1.1 404 Not Found
-    Date: Thu, 24 Feb 2011 12:36:32 GMT
-    Status: 404 Not Found
-    Connection: close
-    Content-Type: application/json
-    Content-Length: 35
-
-    {"status":404,"reason":"Not found"}
-
-## Get deleted Thing
-
-### Request
-
-`GET /thing/1`
-
-    curl -i -H 'Accept: application/json' http://localhost:7000/thing/1
-
-### Response
-
-    HTTP/1.1 404 Not Found
-    Date: Thu, 24 Feb 2011 12:36:33 GMT
-    Status: 404 Not Found
-    Connection: close
-    Content-Type: application/json
-    Content-Length: 35
-
-    {"status":404,"reason":"Not found"}
-
-## Delete a Thing using the _method hack
-
-### Request
-
-`DELETE /thing/id`
-
-    curl -i -H 'Accept: application/json' -X POST -d'_method=DELETE' http://localhost:7000/thing/2/
-
-### Response
-
-    HTTP/1.1 204 No Content
-    Date: Thu, 24 Feb 2011 12:36:33 GMT
-    Status: 204 No Content
-    Connection: close
-
-
+    content-type: application/json; charset=utf-8
+    cache-control: no-cache
+    content-length: 9272
+    vary: accept-encoding
+    accept-ranges: bytes
+    Date: Mon, 13 Jun 2022 03:30:58 GMT
+    Connection: keep-alive
+    Keep-Alive: timeout=5
+
+    {"angka":{"learnCategories":{"learnCourse":[{"learns":[{"answer":"0","gifLink":"https://i.makeagif.com/media/8-17-2020/cwMkQo.gif","name":"belajar angka 0"},{"answer":"1","gifLink":"https://i.makeagif.com/media/8-17-2020/KyAufF.gif","name":"belajar angka 1"},{"answer":"2","gifLink":"https://i.makeagif.com/media/8-17-2020/qtesC6.gif","name" ....
